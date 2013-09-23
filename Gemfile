@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+gem 'simple_form', github:'plataformatec/simple_form'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -30,6 +33,16 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'capybara'
+  gem 'valid_attribute'
+  gem 'shoulda-matchers'
+  gem 'launchy'
+  gem 'pry-rails'
 end
 
 # Use ActiveModel has_secure_password
