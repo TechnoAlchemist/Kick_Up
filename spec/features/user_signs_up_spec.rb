@@ -16,9 +16,10 @@ feature 'user signs up', %q{
   scenario 'user signs up with valid info' do
     visit new_user_registration_path
     email = "gabe@example.com"
+    pass = 'gabegabe'
     fill_in "Email", with: email
-    fill_in "Password", with: pass
-    fill_in "Password confirmation", with: pass
+    fill_in "user_password", with: pass
+    fill_in "user_password_confirmation", with: pass
     click_on "Register"
 
     expect(page).to have_content 'Welcome football fanatic!'
