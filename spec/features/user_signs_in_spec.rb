@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'user signs up', %q{
+feature 'user signs in', %q{
 As a user
 I want to enter my account information
 So I can brag about my club
