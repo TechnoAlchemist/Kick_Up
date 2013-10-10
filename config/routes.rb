@@ -1,4 +1,6 @@
 KickUp::Application.routes.draw do
+  resources :comments
+
   resources :matches do
     resources :comments
   end

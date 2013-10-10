@@ -1,6 +1,7 @@
 class Club < ActiveRecord::Base
   has_many :matches, 
-    inverse_of: :club
+    inverse_of: :home_team,
+    inverse_of: :away_team
     
 
   belongs_to :league,

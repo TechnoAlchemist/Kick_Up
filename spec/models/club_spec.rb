@@ -5,5 +5,5 @@ describe Club do
   it { should belong_to :league}
   
   it {should have_valid(:name).when("Arsenal")}
-  it {should_not have_valid(:name).when(12, " ")}
+  it {should_not have_valid(:name).when(nil, " ")}
 end
