@@ -6,3 +6,4 @@ describe Match do
   it {should have_valid(:schedule_date).when(Date.today)}
   it {should_not have_valid(:schedule_date).when("", nil)}
 end
+
