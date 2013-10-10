@@ -8,6 +8,9 @@ class Match < ActiveRecord::Base
     class_name: 'Club',
     inverse_of: :matches
 
+  has_many :comments,
+    inverse_of: :match
+
   validates_presence_of :schedule_date
 
 
