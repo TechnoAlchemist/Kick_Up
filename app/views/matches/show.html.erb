@@ -1,0 +1,38 @@
+<h1><%= "Match Day #{@match.id}" %></h1>
+
+<p>
+  <strong>Match Date:</strong>
+  <%= @match.schedule_date %>
+</p>
+
+<p>
+  <strong>Home Team:</strong>
+  <%= @match.home_team_id %>
+</p>
+
+<p>
+  <strong>Away Team</strong>
+  <%= @match.away_team_id %>
+</p>
+
+<p>
+  <strong>Half Time Score</strong>
+  <%= @match.half_time %>
+</p>
+
+<p>
+  <strong>Full Time Score</strong>
+  <%= @match.full_time %>
+</p>
+
+<div>
+  <h3>Comments</h3>
+  <% if current_user.present? %>
+    <%= link_to "Add Comment", new_match_comment_path(@match) %>
+  <% else %>
+    <%= link_to "Sign in to post comments", new_user_session_path %>
+  <% end %>
+
+</div>
+
+

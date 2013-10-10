@@ -21,13 +21,22 @@ feature 'user comments on a match', %Q{
     expect(new_comment.match_id).to eql(match.id)
   end
 
+  scenario "unauthorized user comments on a match" do
+    visit match_path(match)
+    click_on "Add Comment"
+    fill_in "Comment", with: "Manchester city would still be a mid table team without corrupt oil money"
+    click_on "Submit Comment"
+    expect(page).to have_content("Manchester city would still be a mid table team without corrupt oil money")
+    expect(page).to have_content("Sign in to post comments")
+  end
+
+
   scenario "user submits without adding a comment" do
     sign_in_as(user)
     visit match_path(match)
     click_on "Add Comment"
     fill_in "Comment", with: ""
     click_on "Submit Comment"
-    expect(page).to have_enter("You must write an entry before submitting comments")
-    
+    expect(page).to have_enter("You must write an entry before submitting comments")  
   end
 end
