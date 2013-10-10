@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 20131006183827) do
   end
 
   create_table "matches", force: true do |t|
-    t.string   "home_team",                 null: false
-    t.string   "away_team",                 null: false
-    t.date     "schedule_date",             null: false
-    t.integer  "home_score",    default: 0
-    t.integer  "away_score",    default: 0
+    t.integer  "home_team_id",                  null: false
+    t.integer  "away_team_id",                  null: false
+    t.date     "schedule_date",                 null: false
+    t.string   "half_time",     default: "0-0"
+    t.string   "full_time",     default: "0-0"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

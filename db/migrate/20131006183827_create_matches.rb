@@ -1,11 +1,11 @@
 class CreateMatches < ActiveRecord::Migration
   def change
     create_table :matches do |t|
-      t.string :home_team, null: false
-      t.string :away_team, null: false
+      t.integer :home_team_id, null: false
+      t.integer :away_team_id, null: false
       t.date :schedule_date, null: false
-      t.integer :home_score, default: 0
-      t.integer :away_score, default: 0
+      t.string :half_time, default: '0-0'
+      t.string :full_time, default: '0-0'
 
       t.timestamps
     end
