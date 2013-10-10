@@ -7,6 +7,7 @@ feature 'user comments on a match', %Q{
 } do
 
   let(:user){FactoryGirl.create(:user)}
+  let(:match) { FactoryGirl.create(:match)}
 
   scenario "user comments on a match" do
     sign_in_as(user)

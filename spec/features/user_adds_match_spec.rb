@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'user adds a match to rate', %Q{
+feature 'user adds a match to comment', %Q{
   As a user,
   I want to add a match,
   So that I can rate the match
