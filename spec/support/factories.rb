@@ -12,6 +12,12 @@ FactoryGirl.define do
     half_time '0-0'
     full_time '3-0'
   end
+
+  factory :club do
+    name "Arsenal"
+    location "London"
+    league_id 1
+  end
 end
 
 

@@ -1,5 +1,10 @@
 <h2>Sign up</h2>
 
+<% if resource.errors.any? %>
+<%= resource.errors.full_messages.each do |e| %>
+<%= e %>
+<% end %>
+<% end %>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 

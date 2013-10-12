@@ -4,7 +4,5 @@ module AuthenticationHelper
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "Sign In"
-
-    expect(page).not_to have_content "Not Found"
   end
 end

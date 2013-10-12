@@ -3,8 +3,13 @@ class MatchesController < ApplicationController
     @match = Match.new
   end
 
+  def index
+    @matches = Match.where('schedule_date > ?', Time.now - 2.weeks)
+  end
+
   def show
     @match = Match.find(params[:id])
+    @comments = Comment.where(match_id: @match.id)
     @comment = Comment.new
   end
 

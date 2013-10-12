@@ -7,36 +7,26 @@ feature 'user comments on a match', %Q{
 } do
 
   let(:user){FactoryGirl.create(:user)}
-  let(:match) { FactoryGirl.create(:match)}
+  # create 2 clubs
+  # in your match specify the home and away teams to be those clubs
+  let!(:club1){FactoryGirl.create(:club, name: "Arsenal")}
+  let!(:club2){FactoryGirl.create(:club, name: "Swansea")}
+  let!(:match) { FactoryGirl.create(:match, home_team: club1, away_team: club2)}
 
   scenario "user comments on a match" do
     sign_in_as(user)
     visit match_path(match)
-    click_on "Add Comment"
-    fill_in "Comment", with: "Manchester city would still be a mid table team without corrupt oil money"
+    fill_in "Body", with: "Manchester city would still be a mid table team without corrupt oil money"
     click_on "Submit Comment"
     expect(page).to have_content("Manchester city would still be a mid table team without corrupt oil money")
-
-    new_comment = Comment.last
-    expect(new_comment.match_id).to eql(match.id)
-  end
-
-  scenario "unauthorized user comments on a match" do
-    visit match_path(match)
-    click_on "Add Comment"
-    fill_in "Comment", with: "Manchester city would still be a mid table team without corrupt oil money"
-    click_on "Submit Comment"
-    expect(page).to have_content("Manchester city would still be a mid table team without corrupt oil money")
-    expect(page).to have_content("Sign in to post comments")
   end
 
 
   scenario "user submits without adding a comment" do
     sign_in_as(user)
     visit match_path(match)
-    click_on "Add Comment"
-    fill_in "Comment", with: ""
+    fill_in "Body", with: ""
     click_on "Submit Comment"
-    expect(page).to have_enter("You must write an entry before submitting comments")  
+    expect(page).to have_content("You must write an entry before submitting comments")  
   end
 end
