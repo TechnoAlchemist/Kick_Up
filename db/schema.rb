@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131006183827) do
+ActiveRecord::Schema.define(version: 20131011221142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20131006183827) do
     t.datetime "updated_at"
   end
 
+  create_table "comments", force: true do |t|
+    t.text     "body",       null: false
+    t.integer  "user_id",    null: false
+    t.integer  "match_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "leagues", force: true do |t|
     t.string   "name",       null: false
     t.datetime "created_at"
@@ -31,11 +39,11 @@ ActiveRecord::Schema.define(version: 20131006183827) do
   end
 
   create_table "matches", force: true do |t|
-    t.string   "home_team",                 null: false
-    t.string   "away_team",                 null: false
-    t.date     "schedule_date",             null: false
-    t.integer  "home_score",    default: 0
-    t.integer  "away_score",    default: 0
+    t.integer  "home_team_id",                  null: false
+    t.integer  "away_team_id",                  null: false
+    t.date     "schedule_date",                 null: false
+    t.string   "half_time",     default: "0-0"
+    t.string   "full_time",     default: "0-0"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,6 +61,7 @@ ActiveRecord::Schema.define(version: 20131006183827) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username",               default: ""
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

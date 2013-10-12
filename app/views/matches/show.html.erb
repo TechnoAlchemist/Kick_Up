@@ -1,0 +1,49 @@
+<h1><%= "Match Day #{@match.id}" %></h1>
+
+<p>
+  <strong>Match Date:</strong>
+  <%= @match.schedule_date %>
+</p>
+
+<p>
+  <strong>Home Team:</strong>
+  <%= @match.home_team.name %>
+</p>
+
+<p>
+  <strong>Away Team</strong>
+  <%= @match.away_team.name %>
+</p>
+
+<p>
+  <strong>Half Time Score</strong>
+  <%= @match.half_time %>
+</p>
+
+<p>
+  <strong>Full Time Score</strong>
+  <%= @match.full_time %>
+</p>
+
+<div>
+  <h3>Comments</h3>
+  <% if Comment.where(match_id: @match.id).exists? %>
+  <% @comments.each do |comment| %>
+    <p>
+      <%= comment.body %>
+      <%= comment.user.username %>
+    </p>
+  <% end %>
+  <% end %>
+  <% if current_user.present? %>
+    <%= simple_form_for [@match, @comment] do |f| %>
+      <%= f.input :body %>
+      <%= f.submit 'Submit Comment' %>
+    <% end %>
+  <% else %>
+    <%= link_to "Sign in to post comments", new_user_session_path %>
+  <% end %>
+
+</div>
+
+
