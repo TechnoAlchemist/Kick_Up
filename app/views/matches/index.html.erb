@@ -1,0 +1,9 @@
+<h1>All Matches</h1>
+<ul>
+
+<% @matches.each do |match| %>
+
+  <li><%= link_to "#{match.home_team.name} vs #{match.away_team.name}", match_path(match) %> </li>
+
+<% end %>
+</ul>
