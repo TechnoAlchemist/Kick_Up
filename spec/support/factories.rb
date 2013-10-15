@@ -11,6 +11,7 @@ FactoryGirl.define do
     schedule_date Date.today
     half_time '0-0'
     full_time '3-0'
+    ranking 4
   end
 
   factory :club do

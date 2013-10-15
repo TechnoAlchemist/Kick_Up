@@ -11,6 +11,8 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
     @comments = Comment.where(match_id: @match.id)
     @comment = Comment.new
+    @votes = Vote.where(match_id: @match.id)
+    @vote = Vote.new
   end
 
   private
