@@ -3,6 +3,7 @@ KickUp::Application.routes.draw do
 
   resources :matches do
     resources :comments
+    resources :votes
   end
 
   devise_for :users

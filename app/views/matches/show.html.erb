@@ -26,6 +26,29 @@
 </p>
 
 <div>
+  <h3>Ranking</h3>
+  <%= simple_form_for @match do |f| %>
+    <%= f.input :ranking, collection: Match.rankings %>
+  <% end %>
+</div>
+
+  <%= simple_form_for [@match, @vote] do |f| %>
+    <div id="upvote">
+      <%= f.hidden_field :value, value: 1 %>
+      <%= f.button :submit, "+" %>
+    </div>
+  <% end %>
+    <%= @match.total_rank %>
+      <%= simple_form_for [@match, @vote] do |f| %>
+        <div id="downvote"> 
+          <%= f.hidden_field :value, value: -1 %>
+          <%= f.button :submit, "-" %>
+        </div>
+      <% end %>  
+
+
+
+<div>
   <h3>Comments</h3>
   <% if Comment.where(match_id: @match.id).exists? %>
   <% @comments.each do |comment| %>

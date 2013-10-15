@@ -11,7 +11,17 @@ class Match < ActiveRecord::Base
   has_many :comments,
     inverse_of: :match
 
+  has_many :votes, 
+    inverse_of: :match
+
   validates_presence_of :schedule_date
+  validates_presence_of :ranking
+  validates_numericality_of :vote_count
+  validates_numericality_of :ranking
+
+  def self.rankings
+    (1..5).to_a
+  end
 
 
 
