@@ -23,6 +23,10 @@ class Match < ActiveRecord::Base
     (1..5).to_a
   end
 
+  def total_rank
+    votes.pluck(:value).reduce(:+)
+  end
+
 
 
 end

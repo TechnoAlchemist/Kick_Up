@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
       redirect_to match_path(@match)
     else
       flash[:notice] = "You must write an entry before submitting comments"
+      @vote = Vote.new
       render "matches/show"
       # render action: 'show'
     end

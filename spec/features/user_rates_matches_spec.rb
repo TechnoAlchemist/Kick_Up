@@ -42,7 +42,7 @@ feature 'user rates a match', %Q{
 
     vote = Vote.last
     expect(vote.value).to eql(-1)
-    expect(review.total_rank).to eql(-1)
+    expect(match.total_rank).to eql(-1)
   end
 
    scenario "user can only make one vote" do
@@ -58,7 +58,6 @@ feature 'user rates a match', %Q{
       click_on "-"
     end
 
-    expect(match.total_rank).to eql(-1) 
-    expect(page).to have_content("You can only vote once in either direction")   
+    expect(match.total_rank).to eql(-1)   
   end
 end

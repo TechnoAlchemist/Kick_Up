@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :authentications
   has_many :comments
+  has_many :votes
 
   validates_uniqueness_of :username        
 end
