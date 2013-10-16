@@ -5,12 +5,20 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
 <body>
     <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end -%>
-<%= yield %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= yield :sidebar %>
+      </div>
+      <div class="col-md-8">
+        <%= yield %>
+      </div>
+    </div>
 
 </body>
 </html>
