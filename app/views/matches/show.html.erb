@@ -1,6 +1,6 @@
-<h1><%= "Match Day #{@match.id}" %></h1>
-<%= image_tag @match.home_team.image_url %>
-<%= image_tag @match.away_team.image_url %>
+<%= image_tag @match.home_team.image_url, class: "logo" %>
+<h1 id="versus"> vs </h1>
+<%= image_tag @match.away_team.image_url, class: "logo"  %>
 
 <p>
   <strong>Match Date:</strong>
