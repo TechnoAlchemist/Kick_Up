@@ -1,3 +1,4 @@
+<% if false %>
 <p><%= "Welcome " + current_user.email if user_signed_in?  %><p>
 
 
@@ -14,3 +15,15 @@
     <% end %>
 
   <% end %>
+<% end %>
+
+
+
+<!-- Main jumbotron for new users to sign up and spew venom at Man City and Chelsea -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome Football Fanatic</h1>
+    <p>Football fans of the world (or EPL) rejoice! Finally, there is site where you can congregate and talk about the latest action in this new campaign. Rate matches and comment on them with other users. All supporters are welcome even Chelsea fans! </p>
+     <p> <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %></p>
+  </div>
+</div>

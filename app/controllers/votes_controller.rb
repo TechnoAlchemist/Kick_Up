@@ -7,9 +7,9 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(vote_params)
     @match = Match.find(params[:match_id])
-    @vote = Vote.find_by(:user => current_user, :match => @match)
+    @vote = Vote.find_by(:user_id => current_user.id, :match => @match)
     if @vote.nil?
-      @vote = Vote.new(:user => current_user, :match => @match)
+      @vote = Vote.new(:user_id => current_user.id, :match => @match)
     end
     @vote.value = vote_params[:value]
     @vote.user_id = current_user.id

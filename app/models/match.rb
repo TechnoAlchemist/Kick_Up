@@ -15,7 +15,6 @@ class Match < ActiveRecord::Base
     inverse_of: :match
 
   validates_presence_of :schedule_date
-  validates_presence_of :ranking
   validates_numericality_of :vote_count
   validates_numericality_of :ranking
 

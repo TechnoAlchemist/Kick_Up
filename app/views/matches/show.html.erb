@@ -1,4 +1,6 @@
-<h1><%= "Match Day #{@match.id}" %></h1>
+<%= image_tag @match.home_team.image_url, class: "logo" %>
+<h1 id="versus"> vs </h1>
+<%= image_tag @match.away_team.image_url, class: "logo"  %>
 
 <p>
   <strong>Match Date:</strong>
@@ -24,13 +26,6 @@
   <strong>Full Time Score</strong>
   <%= @match.full_time %>
 </p>
-
-<div>
-  <h3>Ranking</h3>
-  <%= simple_form_for @match do |f| %>
-    <%= f.input :ranking, collection: Match.rankings %>
-  <% end %>
-</div>
 
   <%= simple_form_for [@match, @vote] do |f| %>
     <div id="upvote">
