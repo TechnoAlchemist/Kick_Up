@@ -32,6 +32,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'httparty'
+gem 'nokogiri'
+
 
 gem 'rails_12factor', group: :production
 
