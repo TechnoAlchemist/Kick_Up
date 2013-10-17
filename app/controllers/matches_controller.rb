@@ -5,6 +5,7 @@ class MatchesController < ApplicationController
 
   def index
     @matches = Match.where('schedule_date > ?', Time.now - 2.weeks)
+    @all_matches = Match.all
   end
 
   def show

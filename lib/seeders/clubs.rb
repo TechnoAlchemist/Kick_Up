@@ -6,8 +6,9 @@ module Seeders
         clubs.each do |club|
           path = club["path"]
           name = club["name"]
-          Club.where(location: 'United Kingdom', name: name, league_id: league.id).first_or_create
-
+          team = Club.where(location: 'United Kingdom', name: name, league_id: league.id).first_or_create
+          team.image_url = "logos/#{path}.png"
+          team.save
         end
 
         clubs = Club.pluck(:name).map{|club| club.downcase.gsub(' ', '-')}
