@@ -16,7 +16,7 @@ So I can brag about my club
   let(:user) {FactoryGirl.create(:user)}
   scenario 'user signs in' do
     sign_in_as(user)
-    expect(page).to have_content("Welcome #{user.email}")
+    expect(page).to have_content("Signed in successfully.")
   
   end
 end

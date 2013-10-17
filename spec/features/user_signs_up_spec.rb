@@ -22,7 +22,7 @@ feature 'user signs up', %q{
     fill_in "user_password_confirmation", with: pass
     click_on "Register"
 
-    expect(page).to have_content 'Welcome football fanatic!'
+    
     expect(User.find_by(email: email)).to be_present
   end
 end
