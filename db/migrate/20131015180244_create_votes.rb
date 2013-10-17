@@ -1,7 +1,5 @@
 class CreateVotes < ActiveRecord::Migration
   def up
-
-    drop_table :votes
     
     create_table :votes do |t|
       t.integer :value, null: false
@@ -14,13 +12,6 @@ class CreateVotes < ActiveRecord::Migration
 
   def down
     drop_table :votes
-    
-    create_table :votes do |t|
-      t.integer :value
-      t.integer :user_id
-      t.integer :match_id
-
-      t.timestamps
-    end
+  
   end
 end
