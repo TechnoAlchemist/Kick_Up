@@ -20,7 +20,7 @@ feature 'user rates a match', %Q{
     scenario "user makes a valid upvote" do
     sign_in_as(user)
     visit match_path(match)
-    select(3, :from =>  'Ranking')
+   
 
     within "#upvote" do
       click_on "+"
@@ -34,7 +34,7 @@ feature 'user rates a match', %Q{
   scenario "user makes a valid downvote" do
     sign_in_as(user)
     visit match_path(match)
-    select(3, :from =>  'Ranking')
+
 
     within "#downvote" do
       click_on "-"
@@ -48,7 +48,7 @@ feature 'user rates a match', %Q{
    scenario "user can only make one vote" do
     sign_in_as(user)
     visit match_path(match)
-    select(3, :from =>  'Ranking')
+
 
     within "#downvote" do
       click_on "-"

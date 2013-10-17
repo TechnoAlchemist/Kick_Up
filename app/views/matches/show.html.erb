@@ -27,13 +27,6 @@
   <%= @match.full_time %>
 </p>
 
-<div>
-  <h3>Ranking</h3>
-  <%= simple_form_for @match do |f| %>
-    <%= f.input :ranking, collection: Match.rankings %>
-  <% end %>
-</div>
-
   <%= simple_form_for [@match, @vote] do |f| %>
     <div id="upvote">
       <%= f.hidden_field :value, value: 1 %>
