@@ -16,7 +16,7 @@ class Match < ActiveRecord::Base
 
   validates_presence_of :schedule_date
   validates_numericality_of :vote_count
-  validates_numericality_of :ranking
+  
 
   def self.rankings
     (1..5).to_a

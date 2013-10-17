@@ -14,6 +14,8 @@ module Seeders
         clubs = Club.pluck(:name).map{|club| club.downcase.gsub(' ', '-')}
         clubs.each do |path|
         matches = matches_for(path)
+       
+
 
 
 
