@@ -8,12 +8,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  </head>
 <body>
+  <div class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="#">Kick Up</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/matches">Matches</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" placeholder="Email" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" class="form-control">
+          </div>  
+          <button type="submit" class="btn btn-success">Sign in</button>
+        </form>  
+      </div><!--/ .navbar-collapse -->
+    </div>
+</div>
+
     <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end -%>
-    <div class="container">
+    
         <%= yield %>
-    </div>
+    
+<div class="container">
+  <footer>
+    <p>&copy; Company 2013</p>
+  </footer>
+</div>
 
 </body>
 </html>

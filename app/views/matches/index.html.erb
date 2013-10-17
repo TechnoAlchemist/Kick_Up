@@ -1,21 +1,26 @@
-<%= content_for :sidebar do %>
-<h2>Latest Matches</h2>
-<ul>
 
-  <% @matches.each do |match| %>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Latest Matches</h2>
+    <ul>
 
-  <li><%= link_to "#{match.home_team.name} vs #{match.away_team.name}", match_path(match) %> </li>
+      <% @matches.each do |match| %>
 
-<% end %>
+      <li><%= link_to "#{match.home_team.name} vs #{match.away_team.name}", match_path(match) %> </li>
 
-<ul>
-<%- end -%>
-<h1>All Matches</h1>
-<ul>
+    <% end %>
 
-<% @all_matches.each do |match| %>
+    <ul>
+  </div>
+<div class="col-md-6">
+  <h1>All Matches</h1>
+    <ul>
 
-  <li><%= link_to "#{match.home_team.name} vs #{match.away_team.name}", match_path(match) %> </li>
+      <% @all_matches.each do |match| %>
 
-<% end %>
-</ul>
+        <li><%= link_to "#{match.home_team.name} vs #{match.away_team.name}", match_path(match) %> </li>
+
+    <% end %>
+    </ul>
+</div>
+</div>
