@@ -26,7 +26,7 @@ module Seeders
             half_time = match["halftime"].join('-')
             full_time = match["fulltime"].join('-')
 
-            Match.where(home_team_id: home_team_id, away_team_id: away_team_id, 
+          Match.where(home_team_id: home_team_id, away_team_id: away_team_id, 
               schedule_date: schedule_date, half_time: half_time, full_time: full_time).first_or_create
           end
         end
