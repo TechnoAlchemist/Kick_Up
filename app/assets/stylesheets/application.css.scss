@@ -18,14 +18,32 @@ input#user_email {
 }
 
 .logo {
-  max-width: 125px; 
-  max-height: 125px; 
+  max-width: 155px; 
+  max-height: 155px; 
 }
 
 #versus {
   display: inline;
+  font-family: Impact, fantasy;  
+  font-size: 100px
 }
 
 .navbar-KickUp {
   text-decoration: none;
+}
+
+#stats {
+  line-height: 2;
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 18px
+}
+
+#home {
+  font-size: 18px;
+
+}
+
+#away {
+  font-size: 18px;
+
 }
