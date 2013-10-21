@@ -41,14 +41,14 @@
   <%= simple_form_for [@match, @vote] do |f| %>
     <div id="upvote">
       <%= f.hidden_field :value, value: 1 %>
-      <%= f.button :submit, "+" %>
+      <%= f.button :submit, "+", :class => "btn btn-primary btn-xs" %>
     </div>
   <% end %>
     <%= @match.total_rank %>
       <%= simple_form_for [@match, @vote] do |f| %>
         <div id="downvote"> 
           <%= f.hidden_field :value, value: -1 %>
-          <%= f.button :submit, "-" %>
+          <%= f.button :submit, "-", :class => "btn btn-primary btn-xs" %>
         </div>
       <% end %>  
   </div>
