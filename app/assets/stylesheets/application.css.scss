@@ -49,19 +49,24 @@ input#user_email {
 }
 
 li :link {
+  color: #428bca;
 
 }
 
 
 li :visited {
+  color: #926CD6;
+
   
 }
 
 .btn-success {
   margin-top: 8px;
+  background-color: #FF8100; 
+  border-color: #FF8100;
 }
 
-body.bgimg {
+body#bgimg {
   background: url("background/goal.png");
   background-size: 500px 200px;
   background-repeat: repeat;
@@ -72,4 +77,15 @@ p#copyright {
   font-weight: bold;
   color: #FF8100; 
   line-height: 0.40em;
+  font-size: 22px;
+}
+
+body.constantimg {
+  background: rgba(205, 211, 216, 0.15);
+}
+
+.btn-primary {
+  margin-top: 4px;
+  background-color: #62B1D0; 
+  border-color: #62B1D0;
 }
