@@ -60,3 +60,14 @@ li :visited {
 .btn-success {
   margin-top: 8px;
 }
+
+body.bgimg {
+  background: url("background/goal.png");
+  background-size: 500px 200px;
+  background-repeat: repeat;
+
+}
+
+p.copyright {
+  font-weight: bold;
+}
