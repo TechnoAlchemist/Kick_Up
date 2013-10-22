@@ -70,7 +70,7 @@ li :visited {
 }
 
 body#bgimg {
-  background: url("background/goal.png");
+  background-image: image-url(image_path('background/goal.png'));
   background-size: 500px 200px;
   background-repeat: repeat;
 
