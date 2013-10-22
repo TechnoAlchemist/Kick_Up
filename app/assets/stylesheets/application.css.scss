@@ -17,6 +17,9 @@ input#user_email {
   width: 50%;
 }
 
+input#user_password {
+  width: 47.5%;
+}
 .logo {
   max-width: 155px; 
   max-height: 155px; 
@@ -76,7 +79,7 @@ body#bgimg {
 p#copyright {
   font-weight: bold;
   color: #FF8100; 
-  line-height: 0.40em;
+  line-height: 1.40em;
   font-size: 22px;
 }
 
@@ -90,13 +93,10 @@ body.constantimg {
   border-color: #62B1D0;
 }
 
-// p#msg {
-//   text-align: center;
-// }
 
 div.container div.jumbotron {
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 10 px;
 
 }
 
