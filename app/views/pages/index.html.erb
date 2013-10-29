@@ -9,8 +9,8 @@
 
     <%= group.search('tr').each do |score| %>
       <%= score.search('.status a').text %>
-      <%= score.search('.scores a').text %>
       <%= score.search('.home_team a').text %>
+      <%= score.search('.scores a').text %>
       <%= score.search('.away_team a').text %><br /><br />
     <% end %>
 
