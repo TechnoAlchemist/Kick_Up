@@ -6,6 +6,9 @@ class MatchesController < ApplicationController
   def index
     @matches = Match.where('schedule_date > ?', Time.now - 4.weeks)
     @all_matches = Match.all
+    scores = HTTParty.get("http://espnfc.com/scores/_/league/eng.1/date/20131102/barclays-premier-league")
+    doc = Nokogiri::HTML(scores)
+    @groups = doc.css("#today-games .group-set")
   end
 
   def show

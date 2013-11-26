@@ -1,6 +1,6 @@
 <body class="constantimg">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h2>Latest Matches</h2>
       <ul>
 
@@ -12,7 +12,22 @@
 
       <ul>
     </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
+    <h2>Live Scores</h2>
+
+    <%= @groups.each do |group| %>
+
+      <%= group.search('.mod-header h2 a').text %><br />
+
+      <%= group.search('li').each do |score| %>
+        <%= score.search('.status a').text %>
+        <%= score.search('.scores a').text %>
+        <%= score.search('.home_team a').text %>
+        <%= score.search('.away_team a').text %><br /><br />
+      <% end %>
+    <% end %>
+  </div>  
+  <div class="col-md-4">
     <h1>All Matches</h1>
       <ul>
 

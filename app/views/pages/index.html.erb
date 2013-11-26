@@ -9,8 +9,8 @@
 
     <%= group.search('tr').each do |score| %>
       <%= score.search('.status a').text %>
-      <%= score.search('.scores a').text %>
       <%= score.search('.home_team a').text %>
+      <%= score.search('.scores a').text %>
       <%= score.search('.away_team a').text %><br /><br />
     <% end %>
 
@@ -24,7 +24,7 @@
 <div class="jumbotron">
   <div class="container" id="msg">
     <h1>Welcome Football Fanatic</h1>
-    <p>Football fans of the world (or EPL) rejoice! Finally, there is site where you can congregate and talk about the latest action in this new campaign. Rate matches and comment on them with other users. All supporters are welcome even Chelsea fans! </p>
+    <p>Football fans of the world rejoice! Finally, there is a site where you can congregate and talk about the latest action in this new campaign. Rate matches and comment on them with other users. All supporters are welcome, even Chelsea fans! </p>
      <p> <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %></p>
   </div>
 </div>
